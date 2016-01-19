@@ -1,14 +1,15 @@
 # collection-hook-history
 Meteor package Collection (Insert, Remove, Update) Histories.
 
+##### Demo
+[Demo collection-hook-history.meteor.com](http://collection-hook-history.meteor.com)
+
 
 ## Installation
 
 ```sh
 $ meteor add yasaricli:collection-hook-history
 ```
-
-[Demo collection-hook-history.meteor.com](http://collection-hook-history.meteor.com)
 
 ## Usage Example
 
