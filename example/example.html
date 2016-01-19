@@ -1,0 +1,36 @@
+<head>
+  <title>example</title>
+</head>
+
+<body>
+  {{> books }}
+  {{> histories }}
+</body>
+
+<template name="histories">
+  <h4>Books Collection Histories</h4>
+  <ul>
+    {{# each histories }}
+      <li>
+        {{ type }} -- Book Name: <b>{{ doc.name }}</b>
+      </li>
+    {{/each}}
+  </ul>
+ </template>
+
+<template name="books">
+ <h4>Books Collection</h4>
+ <ul>
+   {{# each books }}
+     <li>
+       Book Name: <b>{{ name }}</b>
+       <a href="#" class="remove">Remove</a>
+     </li>
+   {{/each}}
+ </ul>
+
+ <form id="BookForm">
+   <input type="text" id="name" placeholder="Book Name">
+   <button>Insert</button>
+ </form>
+</template>
