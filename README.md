@@ -2,7 +2,7 @@
 Meteor package Collection (Insert, Remove, Update) Histories.
 
 ##### Demo
-[Demo collection-hook-history.meteor.com](http://collection-hook-history.meteor.com)
+[collection-hook-history.meteor.com](http://collection-hook-history.meteor.com)
 
 
 ## Installation
