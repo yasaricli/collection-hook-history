@@ -8,6 +8,8 @@ Meteor package Collection (Insert, Remove, Update) Histories.
 $ meteor add yasaricli:collection-hook-history
 ```
 
+[Demo collection-hook-history.meteor.com](http://collection-hook-history.meteor.com)
+
 ## Usage Example
 
 ```js
