@@ -16,3 +16,13 @@ Books = new Mongo.Collection('books');
 // attachCollection
 CollectionHookHistory.attachCollection(Books); // insert, remove and update($set, $push, $pull)
 ```
+
+Allow users to write directly to this Histories collection from client code, subject to limitations you define.
+
+```js
+  CollectionHookHistory.allow({
+    insert() {},
+    update() {},
+    remove() {}
+  });
+```
