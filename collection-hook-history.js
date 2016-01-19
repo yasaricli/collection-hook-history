@@ -17,7 +17,7 @@ class CollectionHistory {
         return Users.findOne(this.createdBy);
       },
 
-      collection() {
+      getCollection() {
         return Mongo.Collection.get(this.collection);
       }
     });
