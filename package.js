@@ -1,6 +1,6 @@
 Package.describe({
   name: 'yasaricli:collection-hook-history',
-  version: '0.0.1_1',
+  version: '0.0.2',
   summary: 'Meteor package Collection (Insert, Remove, Update) Histories',
   git: 'https://github.com/yasaricli/collection-hook-history.git',
   documentation: 'README.md'
