@@ -29,13 +29,31 @@ class CollectionHistory {
 
   attachCollection(collection) {
     if (Meteor.isServer) {
-      collection.after.insert((userId, doc) => this.insert(collection._name, 'insert', doc));
-      collection.after.remove((userId, doc) => this.insert(collection._name, 'remove', doc));
+
+      // HOOK INSERT AFTER
+      collection.after.insert((userId, doc) => {
+        this.insert(collection._name, 'insert', doc, userId);
+      });
+
+      // HOOK REMOVE AFTER
+      collection.after.remove((userId, doc) => {
+        this.insert(collection._name, 'remove', doc, userId);
+      });
+
+      // HOOK UPDATE AFTER
+      collection.after.update((userId, doc, fieldNames, modifier, options) => {
+        this.insert(collection._name, _.first(_.keys(modifier)), doc, userId);
+      });
     }
   }
 
-  insert(collection, type, doc) {
-    return this.collection.insert({ collection, type, doc });
+  insert(collection, type, doc, userId) {
+    return this.collection.insert({
+      userId,
+      collection,
+      type,
+      doc
+    });
   }
 }
 
