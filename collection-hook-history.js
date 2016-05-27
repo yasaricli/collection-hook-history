@@ -1,3 +1,14 @@
+class Filters {
+  today() {
+    const date = moment().hour(0).minute(0).second(0).toDate();
+    return {
+      createdAt: {
+        $gt: date
+      }
+    }
+  }
+}
+
 class CollectionHistory {
   constructor() {
     this.collection = new Mongo.Collection('collection-hook-history');
@@ -21,6 +32,9 @@ class CollectionHistory {
         return Mongo.Collection.get(this.collection);
       }
     });
+
+    // Fılters
+    this.filters = new Filters();
   }
 
   allow(options) {
